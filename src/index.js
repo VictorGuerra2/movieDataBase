@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./styles/landingPage.css";
 
 import AppRouter from "./routers/AppRouter";
 // import { store } from "./store/store";

@@ -23,8 +23,10 @@ function PageLanding(){
   },[])
 
 
-  function showDropDown(show="popular"){
-    docu
+  function handleDropDown (event){
+    console.log(event);
+    setDropDown(event.target.value);
+    getMovieData(event.target.value);
   }
   
   return(
@@ -33,9 +35,11 @@ function PageLanding(){
       <button onClick={()=>{getMovieData("popular")}} >Popular</button>
       <button onClick={()=>{getMovieData("now_playing")}} >Now Playing</button> */}
       <div className="drop-down">
-        <button id="top-rated" onClick={()=>{getMovieData("top_rated")}} >Top Rated</button>
-        <button id='popular' onClick={()=>{getMovieData("popular")}} >Popular</button>
-        <button id= 'now-playing' onClick={()=>{getMovieData("now_playing");}} >Now Playing</button>  
+        <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">          
+          <option value="popular">Popular</option>
+          <option value="now_playing">Now Playing</option>
+          <option value="top_rated">Top Rated</option>
+        </select> 
       </div>
 
       <div className="grid-container">

@@ -41,17 +41,17 @@ function PageLanding(){
         </select> 
       </nav>
       <div className="movie-grid-container">
-      {movieData?.map((movie)=>{
+      {movieData?.map((movie,i)=>{
         return(
           <MovieCard 
-          key = {movie.id}
-          moviePoster = {movie.poster_path}
-          title = {movie.title}
+          key={i}
+          movieObject = {movie}
+          
           isFavourite = {isFavourite(favourites,null,movie.id)}
           />
         );
       })}
-      <MovieCard />
+      
       </div>
     </>
   )

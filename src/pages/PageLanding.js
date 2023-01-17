@@ -1,9 +1,12 @@
-import React from 'react';
+import MovieCard from "../components/MovieCards";
 import { useEffect,useState } from 'react';
-import { appTitle,apiKey } from '../Globals/globalVariables';
+import { apiKey } from '../Globals/globalVariables';
 import axios from 'axios';
+import { useSelector } from "react-redux";
+import isFavourite from "../utilities/isFavourite";
 
 function PageLanding(){
+  const favourites = useSelector((state)=>state.favourites.items);
 
   const [movieData, setMovieData] = useState();
   const [dropDownDisplay, setDropDown] = useState();
@@ -22,7 +25,6 @@ function PageLanding(){
     getMovieData('popular');
   },[])
 
-
   function handleDropDown (event){
     console.log(event);
     setDropDown(event.target.value);
@@ -31,25 +33,25 @@ function PageLanding(){
   
   return(
     <>
-      {/* <button onClick={()=>{getMovieData("top_rated")}} >Top Rated</button>
-      <button onClick={()=>{getMovieData("popular")}} >Popular</button>
-      <button onClick={()=>{getMovieData("now_playing")}} >Now Playing</button> */}
-      <div className="drop-down">
+     <nav className="drop-down">
         <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">          
           <option value="popular">Popular</option>
           <option value="now_playing">Now Playing</option>
           <option value="top_rated">Top Rated</option>
         </select> 
-      </div>
-
-      <div className="grid-container">
-        {movieData?.map((movie)=>
-          <div className="movie-card">
-            <img src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`} alt="Movie Poster" />
-            <div className="movie-name">{movie.title}</div>
-           
-          </div>
-        )}
+      </nav>
+      <div className="movie-grid-container">
+      {movieData?.map((movie)=>{
+        return(
+          <MovieCard 
+          key = {movie.id}
+          moviePoster = {movie.poster_path}
+          title = {movie.title}
+          isFavourite = {isFavourite(favourites,null,movie.id)}
+          />
+        );
+      })}
+      <MovieCard />
       </div>
     </>
   )

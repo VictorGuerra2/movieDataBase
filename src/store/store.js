@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import dropDownReducer from '../features/dropDownSlice';
+import favouritesReducer from '../features/favouritesSlice';
 
 
 export const store = configureStore({
   reducer: {
-    dropDown:dropDownReducer
+    favourites: favouritesReducer
   }
 });

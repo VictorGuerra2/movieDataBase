@@ -22,8 +22,8 @@ function AppRouter() {
         <main>
           <Routes>
             <Route path="/" exact element={<PageLanding />} />
-            <Route path="/favourites" element={<PageFavourites />} />
-            <Route path="/about" element={<PageAbout />} />
+            <Route path="/Favourites" element={<PageFavourites />} />
+            <Route path="/PageAbout" element={<PageAbout />} />
             <Route path="/individual" element={<PageMovie />} />
           </Routes>
         </main>

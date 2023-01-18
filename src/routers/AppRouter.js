@@ -22,7 +22,7 @@ function AppRouter() {
         <main>
           <Routes>
             <Route path="/" exact element={<PageLanding />} />
-            <Route path="/Favourites" element={<PageFavourites />} />
+            <Route path="/PageFavourites" element={<PageFavourites />} />
             <Route path="/PageAbout" element={<PageAbout />} />
             <Route path="/individual" element={<PageMovie />} />
           </Routes>

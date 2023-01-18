@@ -6,24 +6,31 @@ import { Link } from "react-router-dom";
 function Header({appTitle}){
   return(
     <header>
-      <nav>
-        
+
+      <nav className="nav-header">
+    
+        <Link to="/">
+        <img className="homeicon" src={require('../images/logoholder.png')} alt="logo" />  
+        </Link>
         
         <Link to="/" >
-        
-        <img src={require('../images/logoholder.png')} alt="logo" />  
           Home
         </Link> 
        
         <Link to="/pageAbout" >
           About
         </Link>
+
         <Link to="/PageFavourites">
           Favourites
         </Link>
-        <input type="text" value="search" name>
-        </input>
+        
       </nav>
+          <input className="search-bar" type="text"  name="search">
+        </input>
+        
+      
+      
     </header>
     )
   

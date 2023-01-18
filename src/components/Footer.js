@@ -1,14 +1,30 @@
 import React from 'react'
-import { getYear } from '../utilities/getDate';
+// import { getYear } from '../utilities/getDate';
 
-function Footer() {
+
+// function Footer() {
+//   return (
+//     <div>Footer</div>
+  
+//     )
+//   }
+
+export default function Footer() {
+
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  };
+
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      
+      <p>BCIT FWD32 React Movie Database</p>
+      <p>by Gabe Kelly, Victor Guerra and Rafael Rivas {getCurrentYear()}</p>
+    </footer>
+  );
 }
+  
 
-// Footer.defaultProps = {
-//   getYear()
-// }
-
-export default Footer
+  
+  
+// export default Footer

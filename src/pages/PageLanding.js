@@ -33,13 +33,16 @@ function PageLanding(){
   
   return(
     <>
+   
      <nav className="drop-down">
         <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">          
           <option value="popular">Popular</option>
           <option value="now_playing">Now Playing</option>
           <option value="top_rated">Top Rated</option>
         </select> 
+      <input type="text"  name="search"></input>
       </nav>
+      
       <div className="movie-grid-container">
       {movieData?.map((movie)=>{
         return(
@@ -47,6 +50,8 @@ function PageLanding(){
           key = {movie.id}
           moviePoster = {movie.poster_path}
           title = {movie.title}
+          releaseDate = {movie.release_date}
+
           isFavourite = {isFavourite(favourites,null,movie.id)}
           />
         );

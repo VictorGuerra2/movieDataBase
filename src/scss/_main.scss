@@ -1,5 +1,6 @@
 @use "mixins" as *;
 @use "var" as *;
+@use "base";
 
 
 
@@ -8,6 +9,23 @@
   .movie-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
   }
+
+  .movie-name {
+    font-family: shapiro;
+    color: white;
+  }
+
+  .release-date {
+    font-family: shapiro;
+    color: white;
+  }
+
+  body {
+    margin: 0;
+  }
+
 }

@@ -1,12 +1,29 @@
-    header {
-    overflow: hidden;
-    background-color: #f1f1f1;
-    padding: 20px 10px;
-  }
+@use "base";
 
-     nav {
-        display: flex;
-        flex: auto;
-        padding: 20px;
+header {
+    display: flex;
+    justify-content: space-between;
+    background: #1F1F1F;
+}
+.nav-header  {
+    display: flex;
+  
+}
+.nav-header a {
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background-color: #1F1F1F;  //Change color to black 
+    text-decoration: none;
+    font-family: shapiro;
+    display: flex;
+    align-items: center;
+}
 
-  }
+input {
+    border: none;
+    background: black;
+    background-color: white;
+    
+}

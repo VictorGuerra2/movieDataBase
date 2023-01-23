@@ -42,7 +42,7 @@ function PageLanding(){
           <option value="now_playing">Now Playing</option>
           <option value="top_rated">Top Rated</option>
         </select> 
-      <input type="text"  name="search"></input>
+      {/* <input type="text"  name="search"></input> */}
       </nav>
       
       <div className="movie-grid-container">

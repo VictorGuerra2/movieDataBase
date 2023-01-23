@@ -31,12 +31,6 @@ function PageLanding(){
     getMovieData(event.target.value);
   }
   
-  const formatDate = newDate(data.release_date);
-  const formattedDate = release.toLocateDateString("en-CA", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
 
 
   return(

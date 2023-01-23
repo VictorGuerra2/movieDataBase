@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react';
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addFavourite, removeFavourite } from "../features/favouritesSlice";
-import Moment from 'moment'; // to format date received from API
+// import Moment from 'moment'; // to format date received from API
 
 
 function MovieCard({key,moviePoster,title,isFavourite,releaseDate }){

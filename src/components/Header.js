@@ -8,8 +8,11 @@ function Header({appTitle}){
         <Link to="/" >
           Home
         </Link>
-        <Link to="/pageAbout" >
+        <Link to="/about" >
           About
+        </Link>
+        <Link to="/favourites" >
+          Favs
         </Link>
       </nav>
     </header>

@@ -2,10 +2,11 @@
 @use "var" as *;
 
 
-
-
-
 @include mq($tabletPortrait) {
+  body {
+    margin: 0;
+  }
+
   .movie-grid-container {
     // @include movie-card;
     display: grid;
@@ -14,45 +15,39 @@
     padding: 2rem;
     background-color: black;
     
-    
   }
 
-  body {
-    margin: 0;
-  }
 
   .movie-card {
     @include movie-card;
   }
-  
-  // img {
-  //   object-fit: contain;
-  // }
-
-
 }
 
 
-// @include mq($mobile) {
-//   .movie-grid-container {
-//     display: grid;
-//     grid-template-columns: repeat(1,1fr);
-//     gap: 1rem;
-//     padding: 1rem;
-//     background-color:$base-color;
+@include mq($mobile) {
+  body {
+    margin: 0;
+  }
+  
+  .movie-grid-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    background-color:$base-color;
 
-//     .movie-card {
-//       @include movie-card;
-//       min-width: 260px;
-//       min-height: 400px;
-//       padding-top: 1rem;
-//       padding-bottom: 1rem;
-//     }
+    .movie-card {
+      @include movie-card;
+      min-width: 260px;
+      min-height: 400px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
 
    
-//   }
+  }
 
-// }
+}
 
 
 

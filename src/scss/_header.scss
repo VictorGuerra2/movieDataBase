@@ -1,4 +1,30 @@
+@use "mixins" as *;
+@use "var" as *;
 
+
+@media screen and (min-width:$mobile) and (max-width:425px) {
+
+
+    header  {
+        @include nav-mobile;
+        
+    }
+
+    .nav-header {
+        @include nav-mobile-a;
+    }
+
+    .homeicon {
+
+        width: 1rem;
+    }
+
+
+
+}
+
+
+@include mq($tabletPortrait) {
 header {
     display: flex;
     justify-content: space-between;
@@ -35,3 +61,6 @@ input {
 .drop-down {
     background: black;
 }
+
+}
+

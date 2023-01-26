@@ -1,2 +1,47 @@
-$desktopMedium: 1024px;
+@font-face {
+    font-family:shapiro;
+    src: url(/Fonts/shapiro/shapiro_45_welter_text.otf)
+}
+
+//variables
+$font: shapiro;
+$text-color:  white;
+$base-color: black;
+$columns-display: repeat(3, 1fr);
+$grid: grid;
+$poster-border: solid 1px blue;
+$poster-width: 300px;
+$poster-height: 525px;
+$rounded-border: 25px;
+$center-content: center;
+
+//movie card mixin
+
+
+@mixin movie-card {
+    font-family: $font;
+    color: $text-color;
+    border: $poster-border;
+    max-width: $poster-width;
+    max-height: $poster-height;
+    background-color: #1D1D1D;
+    border-radius: $rounded-border;
+    display: $grid;
+    justify-content: $center-content;
+
+    // background-color: #d6d6d6;
+    // widht: 300px;
+    // height:550px;
+    
+
+}
+
+
+
+
+//breaking points for responsive page
+$mobile: 425px;
 $tabletPortrait: 768px;
+$laptop: 1280px;
+$desktop: 1920px;
+$desktopMedium: 1024px;

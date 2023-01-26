@@ -1,31 +1,48 @@
 @use "mixins" as *;
 @use "var" as *;
-@use "base";
+
 
 
 
 
 @include mq($tabletPortrait) {
   .movie-grid-container {
+    // @include movie-card;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2rem;
     background-color: black;
-  }
-
-  .movie-name {
-    font-family: shapiro;
-    color: white;
-  }
-
-  .release-date {
-    font-family: shapiro;
-    color: white;
+    
+    
   }
 
   body {
     margin: 0;
   }
+
+  .movie-card {
+    @include movie-card;
+  }
+  
+  img {
+    object-fit: contain;
+  }
+
+  // .movie-poster {
+  //   width: 200;
+  //   height: 300;
+  // }
+
+
+  // .movie-name {
+  //  @include movie-card;
+  // }
+
+  // .release-date {
+  //  @include movie-card;
+  // }
+   
+
 
 }

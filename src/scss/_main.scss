@@ -25,24 +25,35 @@
     @include movie-card;
   }
   
-  img {
-    object-fit: contain;
-  }
-
-  // .movie-poster {
-  //   width: 200;
-  //   height: 300;
+  // img {
+  //   object-fit: contain;
   // }
-
-
-  // .movie-name {
-  //  @include movie-card;
-  // }
-
-  // .release-date {
-  //  @include movie-card;
-  // }
-   
 
 
 }
+
+
+// @include mq($mobile) {
+//   .movie-grid-container {
+//     display: grid;
+//     grid-template-columns: repeat(1,1fr);
+//     gap: 1rem;
+//     padding: 1rem;
+//     background-color:$base-color;
+
+//     .movie-card {
+//       @include movie-card;
+//       min-width: 260px;
+//       min-height: 400px;
+//       padding-top: 1rem;
+//       padding-bottom: 1rem;
+//     }
+
+   
+//   }
+
+// }
+
+
+
+

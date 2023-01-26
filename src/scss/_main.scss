@@ -1,26 +1,6 @@
 @use "mixins" as *;
 @use "var" as *;
 
-@media screen and (min-width:$tabletPortrait) {
-// @include mq($tabletPortrait) {
-  body {
-    margin: 0;
-  }
-
-  .movie-grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-    background-color: black;
-    justify-items: center;
-    
-  }
-
-  .movie-card {
-    @include movie-card;
-  }
-}
 
 // mobile media query
 @media screen and (min-width:$mobile) and (max-width:767px) {
@@ -54,3 +34,49 @@
 
 
 
+//tablet media query
+@media screen and (min-width:$tabletPortrait) and (max-width:$laptop) {
+// @include mq($tabletPortrait) {
+  body {
+    margin: 0;
+  }
+
+  .movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
+    justify-items: center;
+    
+  }
+
+  .movie-card {
+    @include movie-card;
+  }
+}
+
+
+//desktop media query
+
+@media screen and (min-width:$desktop) {
+
+  body {
+    margin: 0;
+  }
+
+  .movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
+    justify-items: center;
+    
+  }
+
+  .movie-card {
+    @include movie-card;
+  }
+
+}

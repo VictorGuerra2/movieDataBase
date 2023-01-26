@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family:shapiro;
     src: url(/Fonts/shapiro/shapiro_45_welter_text.otf)
@@ -18,28 +20,48 @@ $center-content: center;
 //movie card mixin
 
 
+// @mixin movie-card {
+//     font-family: $font;
+//     color: $text-color;
+//     border: $poster-border;
+//     max-width: $poster-width;
+//     max-height: $poster-height;
+//     min-width: 260px; //testing
+//     min-height: 510px; //testing
+//     background-color: #1D1D1D;
+//     border-radius: $rounded-border;
+//     display: $grid;
+//     align-content: space-evenly;
+//     justify-content: space-around;
+//     justify-items: stretch;
+//     padding-top: 1rem;
+//     padding-bottom: 1rem;
+
+// }
+
+
+//works on mobile
 @mixin movie-card {
     font-family: $font;
     color: $text-color;
     border: $poster-border;
     max-width: $poster-width;
     max-height: $poster-height;
-    min-width: 300px; //testing
-    min-height: 525px; //testing
+    min-width: 260px; //testing
+    min-height: 510px; //testing
     background-color: #1D1D1D;
     border-radius: $rounded-border;
-    display: $grid;
-    justify-content: space-around;
-    align-content: space-between;
-    justify-items: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    justify-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-
-    
     
 
 }
-
 
 
 

@@ -24,8 +24,8 @@ function MovieCard({key,moviePoster,title,isFavourite,releaseDate }){
     <>
     <div key={key} className="movie-card">
       <img className="movie-poster" src={`https://image.tmdb.org/t/p/w200/${moviePoster}`} alt="Movie Poster" />
-      <div className="movie-name">{title}</div>
-      <div className="release-date">Release Date: {releaseDate}</div>
+      <div className="movie-name"><p>{title}</p></div>
+      <div className="release-date"><p>Release Date: {releaseDate}</p></div>
       <div className="add-to-favourites"><button>Add to Favourites</button></div>
     </div>            
     </>

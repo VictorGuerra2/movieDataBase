@@ -1,8 +1,8 @@
 @use "mixins" as *;
 @use "var" as *;
 
-
-@media screen and (min-width:$mobile) and (max-width:425px) {
+//mobile media query
+@media screen and (min-width:$mobile) and (max-width:767px) {
 
 
     header  {
@@ -10,30 +10,50 @@
         
     }
 
-    .nav-header {
+    .nav-header a {
         @include nav-mobile-a;
     }
 
     .homeicon {
-
-        width: 1rem;
+        width: 2rem;
     }
 
-
-
+  .drop-down {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 
-@include mq($tabletPortrait) {
-header {
+
+
+//tablet media query
+@media screen and (min-width:$tabletPortrait) {
+// @include mq($tabletPortrait) {
+// header {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     background: black;
+//     width: 100%;
+// }
+// .nav-header  {
+//     display: flex;
+//     position: fixed;
+  
+   
+  
+// }
+.nav-header {
+    position: fixed;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     background: black;
 }
-.nav-header  {
-    display: flex;
-  
-}
+
+
 .nav-header a {
     padding: 1rem;
     text-transform: uppercase;
@@ -46,20 +66,24 @@ header {
     align-items: center;
 }
 
-input {
-    border: none;
-    background: black;
-    background-color: white;
+//for search bar input 
+// input {
+//     border: none;
+//     background: black;
+//     background-color: white;
     
-}
+// }
 
 
 .homeicon {
    width: 2.8rem; 
+   
 }
 
 .drop-down {
-    background: black;
+    background: white;
+    position: fixed;
+    width: 100%;
 }
 
 }

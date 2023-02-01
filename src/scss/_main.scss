@@ -54,6 +54,13 @@
   .movie-card {
     @include movie-card;
   }
+
+  .movie-poster {
+    margin: 1rem;
+   
+  }
+
+
 }
 
 

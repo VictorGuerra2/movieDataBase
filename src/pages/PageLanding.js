@@ -48,7 +48,7 @@ function PageLanding(){
       
       
       <div className="movie-grid-container">
-      {movieData?.map((movie)=>{
+      {movieData?.slice(0,11).map((movie)=>{
         return(
           <MovieCard 
           key = {movie.id}

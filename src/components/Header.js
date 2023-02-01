@@ -29,6 +29,7 @@ function Header({appTitle}){
           {/* <input className="search-bar" type="text"  name="search">
         </input> */}
         
+        
       
       
     </header>

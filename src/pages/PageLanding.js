@@ -35,7 +35,7 @@ function PageLanding(){
 
   return(
     <>
-   
+    <div className="drop-down-position">
      <nav className="drop-down">
         <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">          
           <option value="popular">Popular</option>
@@ -44,6 +44,8 @@ function PageLanding(){
         </select> 
       {/* <input type="text"  name="search"></input> */}
       </nav>
+      </div>
+      
       
       <div className="movie-grid-container">
       {movieData?.map((movie)=>{

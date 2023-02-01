@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: bold;
+    src: url(/Fonts/bold/grotesque-bold.woff2)
+}
 
 @font-face {
     font-family:shapiro;
@@ -59,14 +62,15 @@ $center-content: center;
     justify-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    
+    margin-top: 50px;
 }
+
 
 
 
 //breaking points for responsive page
 $mobile: 320px;
 $tabletPortrait: 768px;
-$desktopMedium: 1024px;
+$desktopMedium: 1080px;
 $laptop: 1280px;
 $desktop: 1440px;

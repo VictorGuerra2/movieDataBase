@@ -35,15 +35,15 @@ function PageLanding(){
 
   return(
     <>
-   
+    <div className="drop-down-container">
      <nav className="drop-down">
         <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">          
           <option value="popular">Popular</option>
           <option value="now_playing">Now Playing</option>
           <option value="top_rated">Top Rated</option>
         </select> 
-      {/* <input type="text"  name="search"></input> */}
       </nav>
+      </div>
       
       <div className="movie-grid-container">
       {movieData?.slice(0,11).map((movie)=>{

@@ -5,7 +5,7 @@
 
 @font-face {
     font-family:shapiro;
-    src: url(/Fonts/shapiro/shapiro_45_welter_text.otf)
+    src: url(/Fonts/shapiro/Shapiro-45-Welter.otf)
 }
 
 //variables
@@ -39,13 +39,12 @@ $center-content: center;
 //     justify-items: stretch;
 //     padding-top: 1rem;
 //     padding-bottom: 1rem;
-
 // }
 
 
 //works on mobile
 @mixin movie-card {
-    font-family: $font;
+    font-family: shapiro;
     color: $text-color;
     border: $poster-border;
     max-width: $poster-width;
@@ -64,8 +63,6 @@ $center-content: center;
     padding-bottom: 1rem;
     margin-top: 50px;
 }
-
-
 
 
 //breaking points for responsive page

@@ -1,11 +1,47 @@
 
 
-// Media Query Mixin
-// @mixin mq($w) {
-//   @media (min-width: $w) {
-//     @content;
-//   }
-// }
+@mixin select-webkit {
+
+  .drop-down, select {
+    //remove webkit appearance
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
+    //style tags
+    font-size: 30px;  
+    font-family: bold; 
+    width: 90%;
+    color: white;
+    background-color: BLACK;
+    border-bottom: 2px solid white;
+    border-top: black;
+    border-left: black;
+    border-right: black;
+    position: fixed;
+    padding-top: 2rem;
+    
+   
+ }
+
+ option {
+  background-color: black
+  
+  
+  
+ }
+
+
+ 
+}
+
+@mixin drop-down {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+    font-size: 30px;
+}
+
 
 
 @mixin nav-mobile {
@@ -41,4 +77,5 @@ font-family: shapiro;
 
 
 }
+
 

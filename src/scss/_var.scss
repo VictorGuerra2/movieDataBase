@@ -1,18 +1,15 @@
-
+@font-face {
+    font-family: bold;
+    src: url(/Fonts/bold/grotesque-bold.woff2)
+}
 
 @font-face {
-    font-family:shapiro-45-welter;
+    font-family:shapiro;
     src: url(/Fonts/shapiro/shapiro_45_welter_text.otf)
 }
 
-// @font-face {
-//     font-family: bold;
-//     src: url(/)
-// }
-
-
 //variables
-$font: shapiro-45-welter;
+$font: shapiro;
 $text-color:  white;
 $base-color: black;
 $columns-display: repeat(3, 1fr);
@@ -51,12 +48,10 @@ $center-content: center;
     font-family: $font;
     color: $text-color;
     border: $poster-border;
-    // max-width: $poster-width;
-    // max-height: $poster-height;
-    // width: $poster-width;
-    height: $poster-height;
-    // min-width: 260px; //testing
-    // min-height: 510px; //testing
+    max-width: $poster-width;
+    max-height: $poster-height;
+    min-width: 260px; //testing
+    min-height: 510px; //testing
     background-color: #1D1D1D;
     border-radius: $rounded-border;
     display: flex;
@@ -67,14 +62,15 @@ $center-content: center;
     justify-items: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    
+    margin-top: 50px;
 }
+
 
 
 
 //breaking points for responsive page
 $mobile: 320px;
 $tabletPortrait: 768px;
-$desktopMedium: 1024px;
+$desktopMedium: 1080px;
 $laptop: 1280px;
 $desktop: 1440px;

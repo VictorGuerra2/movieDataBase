@@ -1,12 +1,18 @@
 
 
 @font-face {
-    font-family:shapiro;
+    font-family:shapiro-45-welter;
     src: url(/Fonts/shapiro/shapiro_45_welter_text.otf)
 }
 
+@font-face {
+    font-family: bold;
+    src: url(/)
+}
+
+
 //variables
-$font: shapiro;
+$font: shapiro-45-welter;
 $text-color:  white;
 $base-color: black;
 $columns-display: repeat(3, 1fr);

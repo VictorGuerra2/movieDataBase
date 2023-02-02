@@ -20,8 +20,45 @@
 
 
 
+<<<<<<< HEAD
   .movie-text {
     @include movie-card-text;
+=======
+    .movie-title {
+      @include movie-title;
+    }
+
+    .movie-release-date {
+      @include movie-release-date;
+
+    }
+
+    .movie-vote-average {
+      @include movie-vote-average;
+
+    }
+
+    .movie-overview {
+      font-family: shapiro-35-feather-text;
+      font-size: 12px;
+      //test
+      max-width: 200px;
+      max-height: 46px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      // white-space: nowrap;
+    }
+
+    .movie-card p {
+      font-size: 1rem;
+
+    }
+
+    .home-icon-src {
+      display:none;
+    }
+   
+>>>>>>> 129f27d4c25aed6083f2f8117f1112056de8adf4
   }
 
   .movie-title {
@@ -75,6 +112,85 @@
 
   }
 
+<<<<<<< HEAD
+=======
+  .drop-down-container {
+    @include drop-down-container;
+    
+  }
+
+  .home-icon-top {
+    display:none;
+  }
+
+// TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
+.movie-text {
+  @include movie-card-text;
+}
+
+.movie-title {
+  @include movie-title;
+}
+
+.movie-release-date {
+  @include movie-release-date;
+
+}
+
+.movie-vote-average {
+  @include movie-vote-average;
+}
+
+.movie-overview {
+  font-family: shapiro-35-feather-text;
+  font-size: 12px;
+  //test
+  max-width: 200px;
+  max-height: 46px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // white-space: nowrap;
+}
+
+
+
+}
+
+
+//desktop media query
+
+@media screen and (min-width:1081px) {
+
+  body {
+    margin: 0;
+    background: black;
+    
+  }
+
+  main {
+    background: black;
+    
+  }
+  .movie-grid-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
+    justify-items: center;
+    max-width: 1920px;
+    
+  }
+
+  .movie-card {
+    @include movie-card;
+  }
+
+  .movie-card-text {
+    @include movie-card-text;
+  }
+>>>>>>> 129f27d4c25aed6083f2f8117f1112056de8adf4
 
 
   .drop-down-container {
@@ -92,19 +208,16 @@
   }
 
   .movie-title {
-    font-family: shapiro-45-welter-text;
-    font-size: 22px;
+    @include movie-title;
   }
 
   .movie-release-date {
-    font-family: shapiro-35-feather-text;
-    font-size: 12px;
+    @include movie-release-date;
 
   }
 
   .movie-vote-average {
-    font-family: shapiro-55-middle-extd;
-    font-size: 18px;
+    @include movie-vote-average;
   }
 
   .movie-overview {
@@ -112,7 +225,7 @@
     font-size: 12px;
     //test
     max-width: 200px;
-    max-height: 49px;
+    max-height: 46px;
     overflow: hidden;
     text-overflow: ellipsis;
     // white-space: nowrap;

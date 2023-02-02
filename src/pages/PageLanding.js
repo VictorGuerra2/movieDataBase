@@ -27,7 +27,6 @@ function PageLanding() {
 
     function handleDropDown(event) {
         setDropDown(event.target.value);
-
         getMovieData(event.target.value).then(r => r);
     }
 
@@ -48,7 +47,6 @@ function PageLanding() {
                             <MovieCard
                                 key={i}
                                 movieObject={movie}
-
                                 isFavourite={isFavourite(favourites, null, movie.id)}
                             />
                         </div>

@@ -9,7 +9,7 @@ function Search() {
     const [movies, setMovies] = useState([]);
 
     const [searchParams] = useSearchParams();
-    const query = searchParams.get('q');
+    const query = searchParams.get('q'); //inputOfSearch
 
     const favourites = useSelector((state) => state.rootReduce.favouritesReducer.items);
 

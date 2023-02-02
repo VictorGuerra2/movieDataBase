@@ -130,7 +130,7 @@ function PageMovie() {
     }
 
     if (array.includes(27)) {
-        my.push('Terror');
+        my.push('Horror');
     }
 
     if (array.includes(16)) {

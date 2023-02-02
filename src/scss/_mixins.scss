@@ -1,14 +1,13 @@
-
-
 @mixin select-webkit {
 
-  .drop-down, select {
+  .drop-down,
+  select {
     //remove webkit appearance
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none; 
+    appearance: none;
     //style tags
-    font-size: 30px;  
+    font-size: 30px;
     font-family: shapiro-95-extd;
     width: 92%;
     color: white;
@@ -19,29 +18,29 @@
     border-right: black;
     // position: fixed;
     padding-top: 2rem;
-   
+
   }
 
- option {
-  background-color: black;
-  
- }
+  option {
+    background-color: black;
+
+  }
 }
 
 @mixin drop-down {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: black;
-    font-size: 30px;
-    font-family: bold;
-    font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: black;
+  font-size: 30px;
+  font-family: bold;
+  font-weight: 700;
 }
 
 @mixin drop-down-container {
-    padding-top: 70px;
-    position: fixed;
-    width: 100%;
+  padding-top: 70px;
+  position: fixed;
+  width: 100%;
 }
 
 
@@ -56,7 +55,7 @@
 
 @mixin nav-mobile {
   overflow: hidden;
-  background-color:black;
+  background-color: black;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -75,16 +74,14 @@
   // padding: 14px 16px;
   // text-decoration: none;
   // font-size: 1rem;
-  
-float:left;
-padding: 1rem;
-text-transform: uppercase;
-font-weight: bold;
-color: white;
-background-color: black;  
-text-decoration: none;
-font-family: shapiro;
+
+  float: left;
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+  font-family: shapiro;
 
 }
-
-

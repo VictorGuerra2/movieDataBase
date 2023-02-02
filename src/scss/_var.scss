@@ -4,7 +4,7 @@
 }
 
 @font-face {
-    font-family:shapiro;
+    font-family: shapiro;
     src: url(../fonts/shapiro/shapiro-45-welter-text.otf)
 }
 
@@ -36,7 +36,7 @@
 
 //variables
 $font: shapiro;
-$text-color:  white;
+$text-color: white;
 $base-color: black;
 $columns-display: repeat(3, 1fr);
 $grid: grid;
@@ -89,11 +89,11 @@ $center-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-top: 50px;
-     //test lenght
+    //test lenght
     //  white-space: nowrap;
-     overflow: hidden;
-     text-overflow: ellipsis;
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }
 
 @mixin movie-card-text {

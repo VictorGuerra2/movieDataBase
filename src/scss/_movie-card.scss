@@ -1,0 +1,27 @@
+@use "var" as *;
+
+.movie-card {
+  font-family: shapiro;
+  color: $text-color;
+  max-width: $poster-width;
+  max-height: $poster-height;
+  width: 260px; //testing
+  height: 525px; //testing
+  background-color: #1D1D1D;
+  border-radius: $rounded-border;
+  display: flex;
+  flex-direction: row; //original is column. Need to review
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  justify-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 50px;
+
+
+  p {
+    font-size: 1rem;
+
+  }
+}

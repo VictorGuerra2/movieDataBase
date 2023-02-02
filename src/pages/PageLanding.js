@@ -51,13 +51,6 @@ function PageLanding() {
 
                                 isFavourite={isFavourite(favourites, null, movie.id)}
                             />
-                            <div>
-                                <button type="button">
-                                    <Link to="/individual" state={{from: movie}}>
-                                        More Info
-                                    </Link>
-                                </button>
-                            </div>
                         </div>
                     );
                 })}

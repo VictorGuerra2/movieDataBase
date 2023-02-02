@@ -7,68 +7,60 @@
   body {
     margin: 0;
     background: black;
-    
+
   }
 
   .movie-grid-container {
     display: grid;
     gap: 1rem;
     padding: 1rem;
-    background-color:$base-color;
+    background-color: $base-color;
     justify-content: center;
   }
 
-    .movie-card {
-      @include movie-card;
-      
-    }
 
-    .movie-text {
-      @include movie-card-text;
-    }
 
-    .movie-title {
-      font-family: shapiro-45-welter-text;
-      font-size: 22px;
-    }
-
-    .movie-release-date {
-      font-family: shapiro-35-feather-text;
-      font-size: 12px;
-
-    }
-
-    .movie-vote-average {
-      font-family: shapiro-55-middle-extd;
-      font-size: 18px;
-    }
-
-    .movie-overview {
-      font-family: shapiro-35-feather-text;
-      font-size: 12px;
-      //test
-      max-width: 200px;
-      max-height: 49px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      // white-space: nowrap;
-    }
-
-    .movie-card p {
-      font-size: 1rem;
-
-    }
-
-    .home-icon-src {
-      display:none;
-    }
-   
+  .movie-text {
+    @include movie-card-text;
   }
+
+  .movie-title {
+    font-family: shapiro-45-welter-text;
+    font-size: 22px;
+  }
+
+  .movie-release-date {
+    font-family: shapiro-35-feather-text;
+    font-size: 12px;
+
+  }
+
+  .movie-vote-average {
+    font-family: shapiro-55-middle-extd;
+    font-size: 18px;
+  }
+
+  .movie-overview {
+    font-family: shapiro-35-feather-text;
+    font-size: 12px;
+    //test
+    max-width: 200px;
+    max-height: 49px;
+  }
+
+
+
+  .home-icon-src {
+    display: none;
+  }
+
+}
 
 
 //tablet media query
 @media screen and (min-width:$tabletPortrait) and (max-width:$laptop) {
-// @include mq($tabletPortrait) {
+
+  // @include mq($tabletPortrait) {
   body {
     margin: 0;
   }
@@ -80,93 +72,9 @@
     padding: 2rem;
     background-color: black;
     justify-items: center;
-    
-  }
-
-  .movie-card {
-    @include movie-card;
 
   }
 
-  .drop-down-container {
-    @include drop-down-container;
-    
-  }
-
-  .home-icon-top {
-    display:none;
-  }
-
-// TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
-.movie-text {
-  @include movie-card-text;
-}
-
-.movie-title {
-  font-family: shapiro-45-welter-text;
-  font-size: 22px;
-}
-
-.movie-release-date {
-  font-family: shapiro-35-feather-text;
-  font-size: 12px;
-
-}
-
-.movie-vote-average {
-  font-family: shapiro-55-middle-extd;
-  font-size: 18px;
-}
-
-.movie-overview {
-  font-family: shapiro-35-feather-text;
-  font-size: 12px;
-  //test
-  max-width: 200px;
-  max-height: 49px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  // white-space: nowrap;
-}
-
-
-
-}
-
-
-//desktop media query
-
-@media screen and (min-width:1081px) {
-
-  body {
-    margin: 0;
-    background: black;
-    
-  }
-
-  main {
-    background: black;
-    
-  }
-  .movie-grid-container {
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 2rem;
-    background-color: black;
-    justify-items: center;
-    max-width: 1920px;
-    
-  }
-
-  .movie-card {
-    @include movie-card;
-  }
-
-  .movie-card-text {
-    @include movie-card-text;
-  }
 
 
   .drop-down-container {
@@ -174,19 +82,11 @@
 
   }
 
-  .movie-poster {
-    @include movie-poster;
-    
-  }
-
   .home-icon-top {
-    display:none;
+    display: none;
   }
 
-
- // TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
-
-
+  // TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
   .movie-text {
     @include movie-card-text;
   }
@@ -216,5 +116,91 @@
     overflow: hidden;
     text-overflow: ellipsis;
     // white-space: nowrap;
+  }
+
+
+
+}
+
+
+//desktop media query
+
+@media screen and (min-width:1081px) {
+
+  body {
+    margin: 0;
+    background: black;
+
+  }
+
+  main {
+    background: black;
+
+  }
+
+  .movie-grid-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
+    justify-items: center;
+    max-width: 1920px;
+
+  }
+
+
+
+  .movie-card-text {
+    @include movie-card-text;
+  }
+
+
+  .drop-down-container {
+    @include drop-down-container;
+
+  }
+
+  .movie-poster {
+    @include movie-poster;
+
+  }
+
+  .home-icon-top {
+    display: none;
+  }
+
+
+  // TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
+
+
+  .movie-text {
+    @include movie-card-text;
+  }
+
+  .movie-title {
+    font-family: shapiro-45-welter-text;
+    font-size: 22px;
+  }
+
+  .movie-release-date {
+    font-family: shapiro-35-feather-text;
+    font-size: 12px;
+
+  }
+
+  .movie-vote-average {
+    font-family: shapiro-55-middle-extd;
+    font-size: 18px;
+  }
+
+  .movie-overview {
+    font-family: shapiro-35-feather-text;
+    font-size: 12px;
+    //test
+    max-width: 200px;
+    max-height: 49px;
+
   }
 }

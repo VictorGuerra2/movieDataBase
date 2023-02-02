@@ -18,11 +18,11 @@ function MovieCard({movieObject, isFavourite}) {
     <div>
       <div id={movieObject.id} className="movie-card">
         <img className="movie-poster" src={`https://image.tmdb.org/t/p/w200/${movieObject.poster_path}`} alt="Movie Poster"/>
-        <p className="movie-title">{movieObject.title}</p>
-        <p className="movie-overview">{movieObject.overview}</p>
-        <p className="movie-release-date">{movieObject.release_date.slice(0, 4)}</p>
-        <p className="movie-rating">{movieObject.vote_average} / 10</p>
-        <div className="add-to-favourites">
+        <p className="movie-title movie-text">{movieObject.title}</p>
+        <p className="movie-overview movie-text">{movieObject.overview}</p>
+        <p className="movie-release-date movie-text">Release Year:{movieObject.release_date.slice(0, 4)}</p>
+        <p className="movie-vote-average movie-text">{movieObject.vote_average} / 10</p>
+        <div>
           {isFavourite ? (
             <FavouriteButton
               movieObject={movieObject}

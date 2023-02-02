@@ -3,8 +3,6 @@
     src: url(../fonts/bold/grotesque-bold.woff2)
 }
 
-
-
 @font-face {
     font-family:shapiro;
     src: url(../fonts/shapiro/shapiro-45-welter-text.otf)
@@ -22,6 +20,19 @@
     font-family: shapiro-45-welter-text;
     src: url(../fonts/shapiro/shapiro-45-welter-text.otf)
 }
+
+// movie-overview font
+@font-face {
+    font-family: shapiro-35-feather-text;
+    src: url(../fonts/shapiro/Shapiro-35-Feather-Text.otf)
+}
+
+// movie-vote-average font (rating)
+@font-face {
+    font-family: shapiro-55-middle-extd;
+    src: url(../fonts/shapiro/Shapiro-55-Middle-Extd.otf)
+}
+
 
 //variables
 $font: shapiro;
@@ -70,7 +81,7 @@ $center-content: center;
     background-color: #1D1D1D;
     border-radius: $rounded-border;
     display: flex;
-    flex-direction: column;
+    flex-direction: row; //original is column. Need to review
     flex-wrap: wrap;
     align-content: space-around;
     justify-content: center;

@@ -168,7 +168,7 @@ function PageMovie() {
 
                 isFavourite={isFavourite(favourites, null, from.id)}
             />
-                <div>{my.map((ele, index) => <p key={index}>{ele}</p>)}</div>
+                <div>{my.map((ele, index) => <div key={index}>{ele}</div>)}</div>
                 <div>{from.original_language}</div>
                 <div>{movie.length > 0 ? <div>{rendeTreiler()}</div> : <div>No Video</div>}</div>
                 <div>{creditsCast.length > 0 ? <div>{rendeCast()}</div> : <div>No Cast</div>}</div>

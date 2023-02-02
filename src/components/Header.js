@@ -15,17 +15,17 @@ function Header({appTitle}) {
             Home
           </Link> 
           
-          <Link to="/pageAbout" >
+          <Link to="/about" >
             About
           </Link>
          
-          <Link to="/PageFavourites">
+          <Link to="/favourites">
             Favourites
           </Link>
           
         </nav>
-            {/* <input className="search-bar" type="text"  name="search">
-          </input> */}
+           
+          <SearchBar/>
           
         
         

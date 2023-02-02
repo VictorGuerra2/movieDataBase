@@ -1,30 +1,23 @@
 import React from 'react';
 import {useLocation} from 'react-router-dom'
-import FavouriteButton from "../components/FavouriteButton";
-import {useDispatch} from "react-redux";
-import {addFavourite, removeFavourite} from "../features/favouritesSlice";
+import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {apiKey, apiUrl} from "../Globals/globalVariables";
 import axios from "axios";
 import YouTube from "react-youtube";
+import MovieCard from "../components/MovieCards";
+import isFavourite from "../utilities/isFavourite";
 
-function PageMovie({isFavourite}) {
+function PageMovie() {
     const [movie, setMovie] = useState([]);
     const [creditsCast, setCreditsCast] = useState([]);
     const [creditsCrew, setCreditsCrew] = useState([]);
     const [runTimeMovie, setRunTimeMovie] = useState([]);
 
-    const location = useLocation();
-    const dispatch = useDispatch();
-    const {from} = location.state;
+    const favourites = useSelector((state) => state.rootReduce.favouritesReducer.items);
 
-    function handleFavClick(addToFav, obj) {
-        if (addToFav === true) {
-            dispatch(addFavourite(obj));
-        } else {
-            dispatch(removeFavourite(obj));
-        }
-    }
+    const location = useLocation();
+    const {from} = location.state;
 
     async function getMovieData(id) {
         const {data} = await axios.get(`${apiUrl}${id}?api_key=${apiKey}`, {
@@ -170,29 +163,15 @@ function PageMovie({isFavourite}) {
 
     return (
         <div>
-            <div id={from.id} className="movie-card">
-                <img src={`https://image.tmdb.org/t/p/w300/${from.poster_path}`} alt="Movie Poster"/>
-                <div className="movie-name">{from.title}({from.release_date.slice(0, 4)})</div>
+            <MovieCard
+                movieObject={from}
+
+                isFavourite={isFavourite(favourites, null, from.id)}
+            />
                 <div>{my.map((ele, index) => <div key={index}>{ele}</div>)}</div>
                 <div>{from.original_language}</div>
-                <div>{from.release_date}</div>
-                <div>{from.overview}</div>
-                <div>{from.vote_average} / 10</div>
-                <div className="add-to-favourites">
-                    {isFavourite ? (
-                        <FavouriteButton
-                            movieObject={from}
-                            remove={true}
-                            handleFavClick={handleFavClick}/>
-                    ) : (
-                        <FavouriteButton
-                            movieObject={from}
-                            handleFavClick={handleFavClick}/>
-                    )}
-                </div>
                 <div>{movie.length > 0 ? <div>{rendeTreiler()}</div> : <div>No Video</div>}</div>
                 <div>{creditsCast.length > 0 ? <div>{rendeCast()}</div> : <div>No Cast</div>}</div>
-            </div>
         </div>
     );
 }

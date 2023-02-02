@@ -4,6 +4,7 @@ import {apiKey} from '../Globals/globalVariables';
 import axios from 'axios';
 import {useSelector} from "react-redux";
 import isFavourite from "../utilities/isFavourite";
+import {Link} from "react-router-dom";
 
 function PageLanding() {
     const [movieData, setMovieData] = useState();
@@ -43,12 +44,21 @@ function PageLanding() {
             <div className="movie-grid-container">
                 {movieData?.map((movie, i) => {
                     return (
-                        <MovieCard
-                            key={i}
-                            movieObject={movie}
+                        <div>
+                            <MovieCard
+                                key={i}
+                                movieObject={movie}
 
-                            isFavourite={isFavourite(favourites, null, movie.id)}
-                        />
+                                isFavourite={isFavourite(favourites, null, movie.id)}
+                            />
+                            <div>
+                                <button type="button">
+                                    <Link to="/individual" state={{from: movie}}>
+                                        More Info
+                                    </Link>
+                                </button>
+                            </div>
+                        </div>
                     );
                 })}
 

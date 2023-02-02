@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {useSearchParams} from "react-router-dom";
+import {Link, useSearchParams} from "react-router-dom";
 import {apiUrlSearch} from '../Globals/globalVariables';
 import MovieCard from "../components/MovieCards";
 import isFavourite from "../utilities/isFavourite";
@@ -30,14 +30,23 @@ function Search() {
         <div>
             {
                 <div className="movie-grid-container">
-                    <h1>Resultados para {query}</h1>
+                    <h1>Results: {query}</h1>
                     {
                         movies.length > 0 &&
-                        movies.map((movie, index) => <MovieCard
-                            key={index}
-                            movieObject={movie}
-                            isFavourite={isFavourite(favourites, null, movie.id)}
-                        />)
+                        movies.map((movie, index) => <div>
+                                <MovieCard
+                                    key={index}
+                                    movieObject={movie}
+                                    isFavourite={isFavourite(favourites, null, movie.id)}
+                                />
+
+                                <button type="button">
+                                    <Link to="/individual" state={{from: movie}}>
+                                        More Info
+                                    </Link>
+                                </button>
+                            </div>
+                        )
                     }
                 </div>
             }

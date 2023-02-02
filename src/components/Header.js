@@ -4,7 +4,9 @@ import SearchBar from "./SerachBar";
 function Header({appTitle}) {
     return (
     <header>
-            <a href="/ovation/"><h1>movieDataBase.</h1></a>
+        <Link to="/">
+                <h1>movieDataBase.</h1>
+                </Link>
             <nav>
                 <Link to="/">
                     Home

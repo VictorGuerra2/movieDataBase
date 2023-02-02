@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {addFavourite, removeFavourite} from "../features/favouritesSlice";
 import FavouriteButton from "../components/FavouriteButton";
@@ -19,13 +18,6 @@ function MovieCard({movieObject, isFavourite}) {
     <div>
       <div id={movieObject.id} className="movie-card">
         <img src={`https://image.tmdb.org/t/p/w300/${movieObject.poster_path}`} alt="Movie Poster"/>
-        <div>
-          <button type="button">
-            <Link to="/individual" state={{from: movieObject}}>
-              More Info
-            </Link>
-          </button>
-        </div>
         <div className="movie-name">{movieObject.title}</div>
         <div>{movieObject.overview}</div>
         <div>{movieObject.release_date.slice(0, 4)}</div>

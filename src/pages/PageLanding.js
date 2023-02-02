@@ -4,6 +4,7 @@ import { apiKey } from '../Globals/globalVariables';
 import axios from 'axios';
 import { useSelector } from "react-redux";
 import isFavourite from "../utilities/isFavourite";
+import { Link } from "react-router-dom";
 
 function PageLanding(){
   const favourites = useSelector((state)=>state.favourites.items);
@@ -35,8 +36,12 @@ function PageLanding(){
 
   return(
     <>
+    
     <div className="drop-down-container">
      <nav className="drop-down">
+     <Link className="home-icon-src-top" to="/">
+        <img className="home-icon-top" src={require('../images/icon.png')} alt="logo" />  
+        </Link>
         <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">          
           <option value="popular">Popular</option>
           <option value="now_playing">Now Playing</option>

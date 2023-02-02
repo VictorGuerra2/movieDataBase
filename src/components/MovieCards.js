@@ -22,11 +22,14 @@ function MovieCard({key,moviePoster,title,isFavourite,releaseDate }){
 
   return(
     <>
+   
     <div key={key} className="movie-card">
       <img className="movie-poster" src={`https://image.tmdb.org/t/p/w200/${moviePoster}`} alt="Movie Poster" />
+      <div className="movie-card-text">
       <div className="movie-name"><p>{title}</p></div>
       <div className="release-date"><p>Release Date: {releaseDate}</p></div>
       <div className="add-to-favourites"><button>Add to Favourites</button></div>
+      </div>
     </div>            
     </>
   )

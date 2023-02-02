@@ -10,32 +10,27 @@
     //style tags
     font-size: 30px;  
     font-family: bold; 
-    width: 90%;
+    width: 92%;
     color: white;
     background-color: BLACK;
     border-bottom: 2px solid white;
     border-top: black;
     border-left: black;
     border-right: black;
-    position: fixed;
+    // position: fixed;
     padding-top: 2rem;
     
    
  }
 
  option {
-  background-color: black
-  
-  
+  background-color: black;
   
  }
-
-
- 
 }
 
 @mixin drop-down {
-  display: flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     background-color: black;
@@ -43,7 +38,21 @@
     font-family: bold;
 }
 
+@mixin drop-down-container {
+    padding-top: 70px;
+    position: fixed;
+    width: 100%;
+}
 
+
+@mixin nav-desktop {
+  display: flex;
+  justify-content: flex-start;
+  background: black;
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+}
 
 @mixin nav-mobile {
   overflow: hidden;
@@ -75,7 +84,6 @@ color: white;
 background-color: black;  
 text-decoration: none;
 font-family: shapiro;
-
 
 }
 

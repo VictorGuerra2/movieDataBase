@@ -9,7 +9,7 @@ function Header({appTitle}){
 
       <nav className="nav-header">
         
-        <Link to="/">
+        <Link className="home-icon-src" to="/">
         <img className="homeicon" src={require('../images/icon.png')} alt="logo" />  
         </Link>
         

@@ -28,19 +28,17 @@
     }
 
     .movie-title {
-      font-family: shapiro-45-welter-text;
-      font-size: 22px;
+      @include movie-title;
     }
 
     .movie-release-date {
-      font-family: shapiro-35-feather-text;
-      font-size: 12px;
+      @include movie-release-date;
 
     }
 
     .movie-vote-average {
-      font-family: shapiro-55-middle-extd;
-      font-size: 18px;
+      @include movie-vote-average;
+
     }
 
     .movie-overview {
@@ -48,7 +46,7 @@
       font-size: 12px;
       //test
       max-width: 200px;
-      max-height: 49px;
+      max-height: 46px;
       overflow: hidden;
       text-overflow: ellipsis;
       // white-space: nowrap;
@@ -103,19 +101,16 @@
 }
 
 .movie-title {
-  font-family: shapiro-45-welter-text;
-  font-size: 22px;
+  @include movie-title;
 }
 
 .movie-release-date {
-  font-family: shapiro-35-feather-text;
-  font-size: 12px;
+  @include movie-release-date;
 
 }
 
 .movie-vote-average {
-  font-family: shapiro-55-middle-extd;
-  font-size: 18px;
+  @include movie-vote-average;
 }
 
 .movie-overview {
@@ -123,7 +118,7 @@
   font-size: 12px;
   //test
   max-width: 200px;
-  max-height: 49px;
+  max-height: 46px;
   overflow: hidden;
   text-overflow: ellipsis;
   // white-space: nowrap;
@@ -192,19 +187,16 @@
   }
 
   .movie-title {
-    font-family: shapiro-45-welter-text;
-    font-size: 22px;
+    @include movie-title;
   }
 
   .movie-release-date {
-    font-family: shapiro-35-feather-text;
-    font-size: 12px;
+    @include movie-release-date;
 
   }
 
   .movie-vote-average {
-    font-family: shapiro-55-middle-extd;
-    font-size: 18px;
+    @include movie-vote-average;
   }
 
   .movie-overview {
@@ -212,7 +204,7 @@
     font-size: 12px;
     //test
     max-width: 200px;
-    max-height: 49px;
+    max-height: 46px;
     overflow: hidden;
     text-overflow: ellipsis;
     // white-space: nowrap;

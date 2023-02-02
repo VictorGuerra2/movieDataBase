@@ -3,15 +3,25 @@
     src: url(../fonts/bold/grotesque-bold.woff2)
 }
 
+
+
 @font-face {
     font-family:shapiro;
     src: url(../fonts/shapiro/shapiro-45-welter-text.otf)
 }
 
-// @font-face {
-//     font-family:shapiro;
-//     src: url(/src/fonts/shapiro/shapiro\45\ welter\text.otf)
-// }
+
+//drop-down menu
+@font-face {
+    font-family: shapiro-95-extd;
+    src: url(../fonts/shapiro/Shapiro-95-Super-Extd.otf)
+}
+
+// movie-title font
+@font-face {
+    font-family: shapiro-45-welter-text;
+    src: url(../fonts/shapiro/shapiro-45-welter-text.otf)
+}
 
 //variables
 $font: shapiro;

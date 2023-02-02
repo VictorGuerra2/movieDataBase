@@ -18,7 +18,7 @@ function MovieCard({movieObject, isFavourite}) {
     <div>
       <div id={movieObject.id} className="movie-card">
         <img className="movie-poster" src={`https://image.tmdb.org/t/p/w200/${movieObject.poster_path}`} alt="Movie Poster"/>
-        <p className="movie-name">{movieObject.title}</p>
+        <p className="movie-title">{movieObject.title}</p>
         <p className="movie-overview">{movieObject.overview}</p>
         <p className="movie-release-date">{movieObject.release_date.slice(0, 4)}</p>
         <p className="movie-rating">{movieObject.vote_average} / 10</p>

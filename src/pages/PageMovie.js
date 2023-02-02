@@ -46,18 +46,18 @@ function PageMovie() {
     }, [from.id]);
 
     function rendeTreiler() {
-        const treiler = movie.find((vid) => vid.name.toLowerCase() === "official trailer");
+        const trailer = movie.find((vid) => vid.name.toLowerCase() === "official trailer");
 
-        const treilerOther = movie.find((vid) => vid);
+        const trailerOther = movie.find((vid) => vid);
 
         const runTime = runTimeMovie;
 
         return (
             <div>
-                {treiler === undefined ?
-                    <YouTube videoId={treilerOther.key}/>
+                {trailer === undefined ?
+                    <YouTube videoId={trailerOther.key}/>
                     :
-                    <YouTube videoId={treiler.key}/>
+                    <YouTube videoId={trailer.key}/>
                 }
                 <p>Time:{runTime}</p>
             </div>
@@ -80,18 +80,18 @@ function PageMovie() {
 
         return (
             <div>
-                <div>Actor:{cast.name}</div>
+                <p>Actor:{cast.name}</p>
                 {
                     directing === undefined ?
-                        <div>{casOtherFind.name}</div>
+                        <p>{casOtherFind.name}</p>
                         :
-                        <div>Directing:{directing.name}</div>
+                        <p>Directing:{directing.name}</p>
                 }
                 {
                     writing === undefined ?
-                        <div>{castOtherLast.name}</div>
+                        <p>{castOtherLast.name}</p>
                         :
-                        <div>Writing:{writing.name}</div>
+                        <p>Writing:{writing.name}</p>
                 }
             </div>
         );
@@ -168,7 +168,7 @@ function PageMovie() {
 
                 isFavourite={isFavourite(favourites, null, from.id)}
             />
-                <div>{my.map((ele, index) => <div key={index}>{ele}</div>)}</div>
+                <div>{my.map((ele, index) => <p key={index}>{ele}</p>)}</div>
                 <div>{from.original_language}</div>
                 <div>{movie.length > 0 ? <div>{rendeTreiler()}</div> : <div>No Video</div>}</div>
                 <div>{creditsCast.length > 0 ? <div>{rendeCast()}</div> : <div>No Cast</div>}</div>

@@ -9,7 +9,7 @@
     appearance: none; 
     //style tags
     font-size: 30px;  
-    font-family: bold; 
+    font-family: shapiro-95-super-extd; 
     width: 92%;
     color: white;
     background-color: BLACK;
@@ -19,9 +19,8 @@
     border-right: black;
     // position: fixed;
     padding-top: 2rem;
-    
    
- }
+  }
 
  option {
   background-color: black;
@@ -35,7 +34,8 @@
     justify-content: center;
     background-color: black;
     font-size: 30px;
-    font-family: bold;
+    font-family: shapiro-95-super-extd;
+    font-weight: 700;
 }
 
 @mixin drop-down-container {

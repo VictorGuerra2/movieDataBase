@@ -21,7 +21,7 @@ $columns-display: repeat(3, 1fr);
 $grid: grid;
 $poster-border: solid 1px blue;
 $poster-width: 300px;
-$poster-height: 525px;
+$poster-height: 600px;
 $rounded-border: 25px;
 $center-content: center;
 
@@ -47,6 +47,8 @@ $center-content: center;
 // }
 
 
+
+
 //works on mobile
 @mixin movie-card {
     font-family: shapiro;
@@ -66,6 +68,11 @@ $center-content: center;
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-top: 50px;
+     //test lenght
+    //  white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+    
 }
 
 @mixin movie-card-text {

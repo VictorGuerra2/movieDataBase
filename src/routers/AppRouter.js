@@ -5,6 +5,7 @@ import PageMovie from '../pages/PageMovie';
 import PageFavourites from '../pages/PageFavourites';
 import PageAbout from '../pages/PageAbout';
 import Search from "../components/Search";
+import Footer from '../components/Footer';
 
 import { appTitle } from '../Globals/globalVariables';
 
@@ -23,6 +24,7 @@ function AppRouter() {
             <Route path="/search" element={<Search />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

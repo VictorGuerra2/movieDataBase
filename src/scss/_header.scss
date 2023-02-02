@@ -1,0 +1,86 @@
+@use "mixins" as *;
+@use "var" as *;
+
+//mobile media query
+@media screen and (min-width:$mobile) and (max-width:767px) {
+
+
+    header  {
+        @include nav-mobile;
+        
+    }
+
+    .nav-header a {
+        @include nav-mobile-a;
+    }
+
+    .homeicon {
+        width: 2rem;
+    }
+
+  .drop-down {
+    @include select-webkit;
+    @include drop-down;
+  }
+}
+
+
+
+
+//tablet media query
+@media screen and (min-width:$tabletPortrait) {
+
+    .drop-down {
+        @include select-webkit;
+        @include drop-down;
+      }
+
+
+
+.nav-header {
+    display: flex;
+    justify-content: flex-start;
+    background: black;
+    
+}
+
+.drop-down-position {
+   
+}
+// .nav-header {
+    
+//     float: left;
+//     display:fixed;
+    
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+//     background: black;
+// }
+
+
+.nav-header a {
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background-color: black;  
+    text-decoration: none;
+    font-family: shapiro;
+    display: flex;
+    align-items: center;
+}
+
+.homeicon {
+   width: 2.8rem; 
+   
+}
+
+// .drop-down {
+//     background: white;
+//     // position: fixed;
+//     width: 100%;
+    
+// }
+
+}
+

@@ -2,12 +2,81 @@
 @use "var" as *;
 
 
+// mobile media query
+@media screen and (min-width:$mobile) and (max-width:767px) {
+  body {
+    margin: 0;
+    
+  }
+
+  .movie-grid-container {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    background-color:$base-color;
+    justify-content: center;
+
+    .movie-card {
+      @include movie-card;
+      // min-width: 260px;
+      // min-height: 400px;
+      
+    }
+
+    .movie-card p {
+      font-size: 1rem;
+    }
+   
+  }
+
+}
 
 
-@include mq($tabletPortrait) {
+
+
+//tablet media query
+@media screen and (min-width:$tabletPortrait) and (max-width:$laptop) {
+// @include mq($tabletPortrait) {
+  body {
+    margin: 0;
+  }
+
   .movie-grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
+    justify-items: center;
+    
   }
+
+  .movie-card {
+    @include movie-card;
+  }
+}
+
+
+//desktop media query
+
+@media screen and (min-width:1081px) {
+
+  body {
+    margin: 0;
+  }
+
+  .movie-grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    background-color: black;
+    justify-items: center;
+    
+  }
+
+  .movie-card {
+    @include movie-card;
+  }
+
 }

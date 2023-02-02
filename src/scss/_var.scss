@@ -1,12 +1,17 @@
 @font-face {
     font-family: bold;
-    src: url(/Fonts/bold/grotesque-bold.woff2)
+    src: url(../fonts/bold/grotesque-bold.woff2)
 }
 
 @font-face {
     font-family:shapiro;
-    src: url(/Fonts/shapiro/shapiro_45_welter_text.otf)
+    src: url(../fonts/shapiro/shapiro-45-welter-text.otf)
 }
+
+// @font-face {
+//     font-family:shapiro;
+//     src: url(/src/fonts/shapiro/shapiro\45\ welter\text.otf)
+// }
 
 //variables
 $font: shapiro;

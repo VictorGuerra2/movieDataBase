@@ -44,19 +44,17 @@ $center-content: center;
 //     justify-items: stretch;
 //     padding-top: 1rem;
 //     padding-bottom: 1rem;
-
 // }
 
 
 //works on mobile
 @mixin movie-card {
-    font-family: $font;
+    font-family: shapiro;
     color: $text-color;
-    border: $poster-border;
     max-width: $poster-width;
     max-height: $poster-height;
-    min-width: 260px; //testing
-    min-height: 510px; //testing
+    width: 260px; //testing
+    height: 525px; //testing
     background-color: #1D1D1D;
     border-radius: $rounded-border;
     display: flex;
@@ -70,8 +68,15 @@ $center-content: center;
     margin-top: 50px;
 }
 
+@mixin movie-card-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
-
+@mixin movie-poster {
+    margin: 16px;
+}
 
 //breaking points for responsive page
 $mobile: 320px;
@@ -79,3 +84,6 @@ $tabletPortrait: 768px;
 $desktopMedium: 1080px;
 $laptop: 1280px;
 $desktop: 1440px;
+
+
+//

@@ -22,4 +22,38 @@
   p {
     font-size: 1rem;
   }
+
+  .movie-text {
+    @include movie-card-text;
+  }
+
+  .movie-title {
+    font-family: shapiro-45-welter-text;
+    font-size: 22px;
+    color: white;
+  }
+
+  .movie-release-date {
+    font-family: shapiro-35-feather-text;
+    font-size: 22px;
+    color: white;
+
+  }
+
+  .movie-vote-average {
+    font-family: shapiro-55-middle-extd;
+    font-size: 18px;
+    color: white;
+
+  }
+
+  .movie-overview {
+    font-family: shapiro-35-feather-text;
+    font-size: 12px;
+    //test
+    max-width: 200px;
+    max-height: 49px;
+
+  }
+
 }

@@ -20,36 +20,6 @@
 
 
 
-  .movie-text {
-    @include movie-card-text;
-  }
-
-  .movie-title {
-    @include movie-title;
-  }
-
-  .movie-release-date {
-    @include movie-release-date;
-
-  }
-
-  .movie-vote-average {
-    @include movie-vote-average;
-
-  }
-
-  .movie-overview {
-    font-family: shapiro-35-feather-text;
-    font-size: 12px;
-    //test
-    max-width: 200px;
-    max-height: 49px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    // white-space: nowrap;
-  }
-
-
 
   .home-icon-src {
     display: none;
@@ -176,31 +146,6 @@
   // TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
 
 
-  .movie-text {
-    @include movie-card-text;
-  }
-
-  .movie-title {
-    @include movie-title;
-  }
-
-  .movie-release-date {
-    @include movie-release-date;
-
-  }
-
-  .movie-vote-average {
-    @include movie-vote-average;
-  }
-
-  .movie-overview {
-    font-family: shapiro-35-feather-text;
-    font-size: 12px;
-    //test
-    max-width: 200px;
-    max-height: 49px;
-
-  }
 
 
 }

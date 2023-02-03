@@ -4,6 +4,10 @@ import {apiUrlSearch } from '../Globals/globalVariables';
 import { useDispatch } from "react-redux";
 import { updateSearchResult, updateSearchValue } from '../features/movieSearchSlice'
 
+
+
+
+
 function SearchBar() {
     const [search, setSearch] = useState('');
     const [movies, setMovies] = useState([]);
@@ -35,19 +39,21 @@ function SearchBar() {
         setSearch('');
     }
 
+
+
     useEffect(() => {
         const resultUrl = `${apiUrlSearch}&query=${query}`;
         getMovieData(resultUrl).then(r => r);
     }, [query]);
     return (
-        <div>
+        <div className="search-bar">
             <form>
                 <input
                     type="text"
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                 />
-                <button type="submit" onClick={handleSubmit}>Search</button>
+                <button className="search-button" type="submit" onClick={handleSubmit}><img className="homeicon" src={require('../images/magnifier.png')} alt="logo" /></button>
             </form>
         </div>
     );

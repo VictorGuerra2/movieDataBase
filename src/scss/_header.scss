@@ -36,6 +36,12 @@
       }
 
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: black;
+}
 
 .nav-header {
     display: flex;

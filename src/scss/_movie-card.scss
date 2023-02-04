@@ -1,22 +1,14 @@
 @use "var" as *;
 
 .movie-card {
-  font-family: shapiro;
   color: $text-color;
   max-width: $poster-width;
   max-height: $poster-height;
-  width: 260px; //testing
-  height: 525px; //testing
   background-color: #1D1D1D;
   border-radius: $rounded-border;
   display: flex;
-  flex-direction: row; //original is column. Need to review
-  flex-wrap: wrap;
-  align-content: space-around;
-  justify-content: center;
-  justify-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  flex-direction: column;
+  padding: 1.6rem;
   margin-top: 50px;
 
   p {
@@ -27,16 +19,24 @@
     @include movie-card-text;
   }
 
+
+
   .movie-title {
     font-family: shapiro-45-welter-text;
     font-size: 22px;
     color: white;
+    margin: 5px;
+    margin-bottom: 1px;
+    max-width: 200px;
+
   }
 
   .movie-release-date {
     font-family: shapiro-35-feather-text;
-    font-size: 22px;
+    font-size: 13px;
     color: white;
+    margin-bottom: 0px;
+    margin-top: 0;
 
   }
 
@@ -44,16 +44,73 @@
     font-family: shapiro-55-middle-extd;
     font-size: 18px;
     color: white;
-
+    margin: 5px;
+    margin-bottom: 0;
   }
 
-  .movie-overview {
-    font-family: shapiro-35-feather-text;
-    font-size: 12px;
-    //test
-    max-width: 200px;
-    max-height: 49px;
-
+  .movie-title,
+  .movie-release-date,
+  .movie-vote-average {
+    margin-left: 0;
   }
 
+  .movie-poster {
+    width: 200px;
+    height: 300px;
+    position: relative;
+
+    :hover+.more-info {
+      display: block;
+    }
+  }
+
+  .more-info {
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      :hover {
+        color: blue;
+      }
+    }
+
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: shapiro-95-extd;
+    background-color: #00000090;
+    width: 90%;
+    height: 94%;
+
+    display: none;
+  }
+
+  svg {
+    fill: blue;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background: none;
+    color: inherit;
+    border: none;
+  }
+}
+
+.movie-card-text {
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom-row-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
 }

@@ -60,11 +60,8 @@ $desktop: 1440px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-}    
+}
 
-@mixin movie-poster {
-    margin: 16px;
-}    
 
 .search-button {
     background: none;

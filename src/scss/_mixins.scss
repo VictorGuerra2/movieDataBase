@@ -19,11 +19,20 @@
     // position: fixed;
     padding-top: 2rem;
 
+    .decorated option:hover {
+      box-shadow: 0 0 10px 100px #1882A8 inset;
+    }
   }
 
-  option {
-    background-color: black;
 
+
+  // option {
+  //   background-color: black;
+
+  // }
+
+  option:hover {
+    color: red;
   }
 }
 
@@ -35,6 +44,13 @@
   font-size: 30px;
   font-family: bold;
   font-weight: 700;
+
+  select:focus {
+    outline: none !important;
+
+  }
+
+
 }
 
 @mixin drop-down-container {
@@ -52,6 +68,7 @@
   position: fixed;
   z-index: 9999;
 }
+
 //sticky nav bar for mobile
 @mixin nav-mobile {
   overflow: hidden;
@@ -78,4 +95,3 @@
   font-family: shapiro;
 
 }
-

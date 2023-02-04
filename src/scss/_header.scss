@@ -21,6 +21,8 @@
   .drop-down {
     @include select-webkit;
     @include drop-down;
+    position: fixed;
+    width: 100%;
   }
 }
 
@@ -50,20 +52,6 @@ header {
     
 }
 
-.drop-down-position {
-   
-}
-// .nav-header {
-    
-//     float: left;
-//     display:fixed;
-    
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-//     background: black;
-// }
-
-
 .nav-header a {
     padding: 1rem;
     text-transform: uppercase;
@@ -80,13 +68,6 @@ header {
    width: 2.8rem; 
    
 }
-
-// .drop-down {
-//     background: white;
-//     // position: fixed;
-//     width: 100%;
-    
-// }
 
 }
 

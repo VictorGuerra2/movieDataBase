@@ -33,6 +33,9 @@ function PageLanding() {
     return (
         <>
             <nav className="drop-down">
+                <Link className="home-icon-src-top" to="/">
+                    <img className="home-icon-top" src={require('../images/icon.png')} alt="logo" />  
+                </Link>
                 <select onChange={handleDropDown} value={dropDownDisplay} name="drop-down">
                     <option value="popular">Popular</option>
                     <option value="now_playing">Now Playing</option>

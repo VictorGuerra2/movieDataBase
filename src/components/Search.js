@@ -30,6 +30,9 @@ function Search() {
         <div>
             {
                 <div className="movie-grid-container">
+                    <Link className="home-icon-src-top" to="/">
+                        <img className="home-icon-top" src={require('../images/icon.png')} alt="logo" />  
+                    </Link>
                     <h1>Results: {query}</h1>
                     {
                         movies.length > 0 &&

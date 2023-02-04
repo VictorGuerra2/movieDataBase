@@ -7,6 +7,7 @@ import axios from "axios";
 import YouTube from "react-youtube";
 import MovieCard from "../components/MovieCards";
 import isFavourite from "../utilities/isFavourite";
+import {Link} from "react-router-dom";
 
 function PageMovie() {
   const [movie, setMovie] = useState([]);
@@ -138,6 +139,13 @@ function PageMovie() {
 
   return (
     <div>
+
+      {/* Home icon */}
+      <Link className="home-icon-src-top" to="/">
+          <img className="home-icon-top" src={require('../images/icon.png')} alt="logo" />  
+      </Link>
+      {/* Home icon end */}
+
       <MovieCard
         movieObject={from}
         isFavourite={isFavourite(favourites, null, from.id)}

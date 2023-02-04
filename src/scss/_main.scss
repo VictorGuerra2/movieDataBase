@@ -18,11 +18,15 @@
     justify-content: center;
   }
 
-
-
-
   .home-icon-src {
     display: none;
+  }
+
+  .home-icon-top {
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 0 auto;
   }
 
 }
@@ -34,6 +38,7 @@
   // @include mq($tabletPortrait) {
   body {
     margin: 0;
+    background: black;
   }
 
   .movie-grid-container {

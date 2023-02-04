@@ -11,6 +11,8 @@ import { updateSearchResult, updateSearchValue } from '../features/movieSearchSl
 function SearchBar() {
     const [search, setSearch] = useState('');
     const [movies, setMovies] = useState([]);
+    const [toggle, setToggle] = useState(false);
+
 
     const [searchParams] = useSearchParams();
     const dispatch = useDispatch();
@@ -26,7 +28,8 @@ function SearchBar() {
     function handleSubmit(event) {
 
         event.preventDefault();
-
+        setToggle(!toggle);
+        
         if (!search) {
             return;
         }
@@ -48,11 +51,14 @@ function SearchBar() {
     return (
         <div className="search-bar">
             <form>
-                <input
+                {
+                    toggle === true && 
+                    <input
                     type="text"
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
                 />
+                }
                 <button className="search-button" type="submit" onClick={handleSubmit}><img className="homeicon" src={require('../images/magnifier.png')} alt="logo" /></button>
             </form>
         </div>

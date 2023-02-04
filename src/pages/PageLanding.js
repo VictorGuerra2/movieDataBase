@@ -11,7 +11,7 @@ function PageLanding() {
     const [dropDownDisplay, setDropDown] = useState();
 
     const favourites = useSelector((state) => state.rootReduce.favouritesReducer.items);
-
+    //axios.get 
     async function getMovieData(type) {
         try {
             let resp = await axios.get(`https://api.themoviedb.org/3/movie/${type}?api_key=${apiKey}&language=en-US&page=1`);
@@ -43,7 +43,8 @@ function PageLanding() {
                     <option value="upcoming">Upcoming</option>
                 </select>
             </nav>
-            <div className="movie-grid-container">
+            {/* Displays function getMovieData */}
+            <div className="movie-grid-container"> 
                 {movieData?.map((movie, i) => {
                     return (
                         <div>

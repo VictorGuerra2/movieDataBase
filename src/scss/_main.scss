@@ -2,13 +2,32 @@
 @use "var" as *;
 
 
+body {
+  margin: 0;
+  background: black;
+
+}
+
+h1, h2 {
+  font-family: shapiro-95-extd;
+  color: white;
+  margin: 2rem;
+}
+
+p {
+  font-family: grotesque-bold;
+  color: white;
+  margin: 2rem;
+}
+
+.credits-icon {
+  margin: 2rem;
+}
+
+
 // mobile media query
 @media screen and (min-width:$mobile) and (max-width:767px) {
-  body {
-    margin: 0;
-    background: black;
 
-  }
 
   .movie-grid-container {
     display: grid;
@@ -35,11 +54,7 @@
 //tablet media query
 @media screen and (min-width:$tabletPortrait) and (max-width:$laptop) {
 
-  // @include mq($tabletPortrait) {
-  body {
-    margin: 0;
-    background: black;
-  }
+
 
   .movie-grid-container {
     display: grid;
@@ -51,6 +66,9 @@
 
   }
 
+  .home-icon-top {
+    display: none;
+  }
 
 
   .drop-down-container {
@@ -58,31 +76,12 @@
 
   }
 
-  .home-icon-top {
-    display: none;
-  }
-
   // TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
   .movie-text {
     @include movie-card-text;
   }
 
-  .movie-title {
-    font-family: shapiro-45-welter-text;
-    font-size: 22px;
-  }
-
-  .movie-release-date {
-    font-family: shapiro-35-feather-text;
-    font-size: 12px;
-
-  }
-
-  .movie-vote-average {
-    font-family: shapiro-55-middle-extd;
-    font-size: 18px;
-  }
-
+  // format movie overview description
   .movie-overview {
     font-family: shapiro-35-feather-text;
     font-size: 12px;
@@ -94,7 +93,9 @@
     // white-space: nowrap;
   }
 
-
+  .home-icon-src {
+    display: none;
+  }
 
 }
 
@@ -102,17 +103,6 @@
 //desktop media query
 
 @media screen and (min-width:1081px) {
-
-  body {
-    margin: 0;
-    background: black;
-
-  }
-
-  main {
-    background: black;
-
-  }
 
   .movie-grid-container {
     margin: 0 auto;
@@ -125,8 +115,6 @@
     max-width: 1920px;
 
   }
-
-
 
   .movie-card-text {
     @include movie-card-text;
@@ -146,11 +134,5 @@
   .home-icon-top {
     display: none;
   }
-
-
-  // TO ADD INDIVIDUAL FONTS PER MOVIE OBJECT
-
-
-
 
 }

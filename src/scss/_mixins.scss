@@ -9,7 +9,7 @@
     //style tags
     font-size: 30px;
     font-family: shapiro-95-extd;
-    width: 92%;
+    width: 94%;
     color: white;
     background-color: BLACK;
     border-bottom: 2px solid white;
@@ -52,7 +52,7 @@
   position: fixed;
   z-index: 9999;
 }
-
+//sticky nav bar for mobile
 @mixin nav-mobile {
   overflow: hidden;
   background-color: black;
@@ -66,14 +66,7 @@
 }
 
 @mixin nav-mobile-a {
-  // float: left;
-  // display: flex;
-  // color:white;
-  // text-align: center;
-  // align-content: center;
-  // padding: 14px 16px;
-  // text-decoration: none;
-  // font-size: 1rem;
+
 
   float: left;
   padding: 1rem;
@@ -85,3 +78,4 @@
   font-family: shapiro;
 
 }
+

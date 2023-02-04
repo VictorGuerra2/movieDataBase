@@ -1,5 +1,5 @@
 @font-face {
-    font-family: bold;
+    font-family: grotesque-bold;
     src: url(../fonts/bold/grotesque-bold.woff2)
 }
 
@@ -46,41 +46,6 @@ $poster-height: 600px;
 $rounded-border: 25px;
 $center-content: center;
 
-//movie card mixin
-
-
-// @mixin movie-card {
-//     font-family: $font;
-//     color: $text-color;
-//     border: $poster-border;
-//     max-width: $poster-width;
-//     max-height: $poster-height;
-//     min-width: 260px; //testing
-//     min-height: 510px; //testing
-//     background-color: #1D1D1D;
-//     border-radius: $rounded-border;
-//     display: $grid;
-//     align-content: space-evenly;
-//     justify-content: space-around;
-//     justify-items: stretch;
-//     padding-top: 1rem;
-//     padding-bottom: 1rem;
-// }
-
-
-
-
-//works on mobile
-
-@mixin movie-card-text {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-@mixin movie-poster {
-    margin: 16px;
-}
 
 //breaking points for responsive page
 $mobile: 320px;
@@ -89,10 +54,21 @@ $desktopMedium: 1080px;
 $laptop: 1280px;
 $desktop: 1440px;
 
+//works on mobile
 
+@mixin movie-card-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}    
+
+@mixin movie-poster {
+    margin: 16px;
+}    
 
 .search-button {
     background: none;
     border: none;
 }
+
 //

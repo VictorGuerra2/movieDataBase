@@ -43,12 +43,12 @@ function SinglePage(){
       obj=>obj.certification!==""
     )
     
-    return rating?.certification;
+    return (rating?.certification) ? rating?.certification : "Unrated";
   }
 
   function showWriter(){
     let writer =  movie?.credits.crew.find(
-      (crew)=>crew.known_for_department.toLowerCase()==="writing"
+      (crew)=>(crew.job.toLowerCase()==="screenplay" || crew.job.toLowerCase()==='writer')
     );
    
     return writer?.name;  
@@ -62,28 +62,52 @@ function SinglePage(){
    
   }
 
+  function findTrailer(){
+    let trailer = movie?.videos.results.find(
+      (vid) => vid.name.toLowerCase() === "official trailer"
+    );
+
+    if(!trailer){
+      trailer = movie?.videos.results.find(
+        (vid) => vid.type.toLowerCase() === "trailer"
+      );
+    }
+    
+    return (trailer?.key) ? <YouTube videoId = {trailer?.key}/>: <p>No Trailer</p>;
+  }
+
   showActors();
   return(
     <>
+    <h1 className="more-info-heading">MORE INFO</h1>
     <div className="single-card">
-      <h1>MORE INFO</h1>
-      <h2>{movie?.title}</h2>
-      <div className="first-info">
-        <p>{movie?.release_date}</p>
-        <p>{findAgeRating()}</p>
-        <p>{movie?.runtime}</p>
+      <section className="info">
+        
+        <h2>{movie?.title}</h2>
+        <div className="first-info">
+          <p>{movie?.release_date}</p>
+          <p>{findAgeRating()}</p>
+          <p>{movie?.runtime}</p>
+        </div>
+        <div className="overview">
+          <p>{movie?.overview}</p>
+        </div>
+        <div className="credits">
+          <h3>Director</h3>
+          <p>{showDirector()}</p>
+          <h3>Staring</h3>
+        <div className="actors">{showActors()[0]}</div>
+          <h3>Writer</h3>
+          <p>{showWriter()}</p>
+        </div>
+        <p>{movie?.vote_average}/10</p>
+      </section>
+      <section className="single-poster">
+        <img src={`https://image.tmdb.org/t/p/w200/${movie?.poster_path}`} alt="" />
+      </section>
+      <div className="trailer">
+        {findTrailer()}
       </div>
-      <div className="credits">
-        <h3>Director</h3>
-        <p>{showDirector()}</p>
-        <h3>Staring</h3>
-       <div className="actors">{showActors()[0]}</div>
-        <h3>Writer</h3>
-        <p>{showWriter()}</p>
-      </div>
-      
-      
-      
     </div>
     </>
   )

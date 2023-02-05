@@ -1,4 +1,27 @@
+.more-info-heading {
+
+  width: 94%;
+  color: white;
+  background-color: BLACK;
+  border-bottom: 2px solid white;
+  border-top: black;
+  border-left: black;
+  border-right: black;
+  // position: fixed;
+  padding-top: 1rem;
+
+
+}
+
+
 .single-card {
+
+
+
+  h2 {
+    font-family: grotesque-bold;
+  }
+
   h3 {
     color: white;
     font-family: grotesque-bold;

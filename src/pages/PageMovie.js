@@ -11,6 +11,7 @@ import {Link} from "react-router-dom";
 
 function PageMovie() {
   const [movie, setMovie] = useState([]);
+  const [titleMovie, setTitle] = useState([]);
   const [creditsCast, setCreditsCast] = useState([]);
   const [creditsCrew, setCreditsCrew] = useState([]);
   const [runTimeMovie, setRunTimeMovie] = useState([]);
@@ -25,22 +26,24 @@ function PageMovie() {
   async function getMovieData(id) {
     const { data } = await axios.get(`${apiUrl}${id}?api_key=${apiKey}`, {
       params: {
-        append_to_response: "credits,videos",
+        append_to_response: "credits,videos,details",
       },
     });
-
+   
     const { cast, crew } = data.credits;
 
     const { runtime } = data;
+    const { title } = data;
+    
 
     setMovie(data.videos.results);
 
     setCreditsCrew(crew);
 
     setCreditsCast(cast);
-
+    setTitle(title);
     setRunTimeMovie(runtime);
-
+    console.log(data);
     return data;
   }
 
@@ -56,6 +59,7 @@ function PageMovie() {
     const trailerOther = movie.find((vid) => vid);
 
     const runTime = runTimeMovie;
+    const title = titleMovie;
 
     return (
       <div>
@@ -64,7 +68,9 @@ function PageMovie() {
         ) : (
           <YouTube videoId={trailer.key} />
         )}
+        
         <p>Time:{runTime}</p>
+        <p>{titleMovie}</p>
       </div>
     );
   }
@@ -146,16 +152,17 @@ function PageMovie() {
       </Link>
       {/* Home icon end */}
 
-      <MovieCard
+      {/* <MovieCard
         movieObject={from}
         isFavourite={isFavourite(favourites, null, from.id)}
-      />
+      /> */}
       <div>
         {my.map((ele, index) => (
           <div key={index}>{ele}</div>
         ))}
       </div>
       <div>{from.original_language}</div>
+      
       <div>
         {movie.length > 0 ? <div>{rendeTreiler()}</div> : <div>No Video</div>}
       </div>

@@ -4,9 +4,9 @@ import {addFavourite, removeFavourite} from "../features/favouritesSlice";
 import FavouriteButton from "../components/FavouriteButton";
 import {Link} from "react-router-dom";
 
-function MovieCard({movieObject, isFavourite}) {
+function MovieCard({movieObject, isFavourite, credits}) {
   const dispatch = useDispatch();
-
+  console.log()
   function handleFavClick(addToFav, obj) {
     if (addToFav === true) {
       dispatch(addFavourite(obj));
@@ -28,12 +28,16 @@ function MovieCard({movieObject, isFavourite}) {
         </div>
         <div className="movie-card-text">
           <div className="top-cluster">
+          <Link to="/single" state={{from: movieObject}}>
+              More Info
+            </Link>  
             <p className="movie-title movie-text">{movieObject.title}</p>
             {/* <p className="movie-overview movie-text">{movieObject.overview.slice(0,99) + "..."}</p> */}
             <p className="movie-release-date movie-text">{movieObject.release_date.slice(0, 4)}</p>
           </div>
           <div className="bottom-row-container">
             <p className="movie-vote-average movie-text">{movieObject.vote_average} / 10</p>
+           
             
             
               {isFavourite ? (

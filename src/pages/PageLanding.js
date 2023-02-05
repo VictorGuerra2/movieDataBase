@@ -16,6 +16,7 @@ function PageLanding() {
         try {
             let resp = await axios.get(`https://api.themoviedb.org/3/movie/${type}?api_key=${apiKey}&language=en-US&page=1`);
             await setMovieData(resp.data.results.slice(0, 12));
+            
         } catch (error) {
             console.log(error);
         }
@@ -52,6 +53,7 @@ function PageLanding() {
                                 key={i}
                                 movieObject={movie}
                                 isFavourite={isFavourite(favourites, null, movie.id)}
+                               
                             />
                         </div>
                     );

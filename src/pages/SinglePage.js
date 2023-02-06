@@ -2,17 +2,33 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import {useDispatch} from "react-redux";
 import { apiKey, apiUrl } from "../Globals/globalVariables";
 import axios from "axios";
 import YouTube from "react-youtube";
 import MovieCard from "../components/MovieCards";
 import isFavourite from "../utilities/isFavourite";
 import {Link} from "react-router-dom";
+import FavouriteButton from "../components/FavouriteButton";
+import {addFavourite, removeFavourite} from "../features/favouritesSlice";
+
 
 function SinglePage(){
+  const dispatch = useDispatch();
   const [movie, setMovie] = useState();
   const location = useLocation();
+  const favourites = useSelector((state) => state.rootReduce.favouritesReducer.items);
+  console.log(favourites);
   const movieId = location.state.from.id
+
+  function handleFavClick(addToFav, obj) {
+    if (addToFav === true) {
+      dispatch(addFavourite(obj));
+    } else {
+      dispatch(removeFavourite(obj));
+    }
+  }
+
   async function getMovieData(movieId){
     const  resp  = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=a72327080c668f440898446bda41785e&language=en-US&append_to_response=videos,credits,release_dates`)
     setMovie(resp.data);
@@ -52,10 +68,17 @@ function SinglePage(){
   }
 
   async function showActors(){
+    let actorsArray = {};
     let actors  = movie?.credits.cast.slice(0,3);
     
+   if(actors.length>0){
+    console.log(actors);
+     return actors[0]; 
+
+   }else{
+    return "no actors";
+   }
     
-    return actors
    
   }
 
@@ -100,11 +123,13 @@ function SinglePage(){
           <h3>Director</h3>
           <p>{showDirector()}</p>
           <h3>Staring</h3>
-        <div className="actors">{showActors()[0]}</div>
+        <div className="actors">{showActors}</div>
           <h3>Writer</h3>
           <p>{showWriter()}</p>
         </div>
         <p>{movie?.vote_average}/10</p>
+        {(isFavourite(favourites,null,movie?.id)) ?(<FavouriteButton movieObject={movie} remove={true} handleFavClick = {handleFavClick}/>):(<FavouriteButton movieObject={movie} remove={false} handleFavClick = {handleFavClick}/>) }
+       
       </section>
      
       </div>

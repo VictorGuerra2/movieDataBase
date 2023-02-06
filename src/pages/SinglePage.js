@@ -16,9 +16,6 @@ function SinglePage(){
   async function getMovieData(movieId){
     const  resp  = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=a72327080c668f440898446bda41785e&language=en-US&append_to_response=videos,credits,release_dates`)
     setMovie(resp.data);
-    
-   
-  
   }
  
 
@@ -73,7 +70,8 @@ function SinglePage(){
       );
     }
     
-    return (trailer?.key) ? <YouTube videoId = {trailer?.key}/>: <p>No Trailer</p>;
+    return (trailer?.key) ? <YouTube containerClassName = {"youtube-container"}   
+    opts={{width:"100%", height:"100%" }}  videoId = {trailer?.key}/>: <p>No Trailer</p>;
   }
 
   showActors();
@@ -81,6 +79,12 @@ function SinglePage(){
     <>
     <h1 className="more-info-heading">MORE INFO</h1>
     <div className="single-card">
+    <div className="tablet-card">
+    <section className="single-poster">
+        <img className="display-mobile" src={`https://image.tmdb.org/t/p/w200/${movie?.poster_path}`} alt="" />
+        <img className="display-tablet" src={`https://image.tmdb.org/t/p/w300/${movie?.poster_path}`} alt="" />
+        <img className="display-desktop" src={`https://image.tmdb.org/t/p/w400/${movie?.poster_path}`} alt="" />
+      </section>
       <section className="info">
         
         <h2>{movie?.title}</h2>
@@ -102,9 +106,8 @@ function SinglePage(){
         </div>
         <p>{movie?.vote_average}/10</p>
       </section>
-      <section className="single-poster">
-        <img src={`https://image.tmdb.org/t/p/w200/${movie?.poster_path}`} alt="" />
-      </section>
+     
+      </div>
       <div className="trailer">
         {findTrailer()}
       </div>

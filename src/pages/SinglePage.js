@@ -18,7 +18,7 @@ function SinglePage(){
   const [movie, setMovie] = useState();
   const location = useLocation();
   const favourites = useSelector((state) => state.rootReduce.favouritesReducer.items);
-  console.log(favourites);
+
   const movieId = location.state.from.id
 
   function handleFavClick(addToFav, obj) {
@@ -67,18 +67,21 @@ function SinglePage(){
     return writer?.name;  
   }
 
-  async function showActors(){
-    let actorsArray = {};
+  function showActors(){
+   
     let actors  = movie?.credits.cast.slice(0,3);
     
-   if(actors.length>0){
-    console.log(actors);
-     return actors[0]; 
-
-   }else{
-    return "no actors";
-   }
-    
+  
+    if(actors){
+      let cast ='';
+     actors.forEach(actor=>{
+      cast+=` ${actor.name}  `;
+     })
+      return cast;
+      
+    }else{
+      return <p>no actors</p>;
+    }
    
   }
 
@@ -97,7 +100,7 @@ function SinglePage(){
     opts={{width:"100%", height:"100%" }}  videoId = {trailer?.key}/>: <p>No Trailer</p>;
   }
 
-  showActors();
+ 
   return(
     <>
     <h1 className="more-info-heading">MORE INFO</h1>
@@ -123,7 +126,7 @@ function SinglePage(){
           <h3>Director</h3>
           <p>{showDirector()}</p>
           <h3>Staring</h3>
-        <div className="actors">{showActors}</div>
+        <div className="actors"><p>{showActors()}</p></div>
           <h3>Writer</h3>
           <p>{showWriter()}</p>
         </div>
